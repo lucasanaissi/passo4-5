@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,13 +22,13 @@
                 <a class="nav-link active" href="">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="/crudUser.html">CRUD - User</a>
+                <a class="nav-link active" href="{{ route('crudUser') }}"> CRUD - User</a>
             </li>
         </ul>
     </div>
     <div class="card-body">
         <h5 class="card-title">Welcome to my first CRUD home page</h5>
-        <img src="Documents/learninglaravel/firstCrud/public/img/CRUD.png" height="209" width="520"/>
+        <img src="{{ asset('img/CRUD.png') }}">
     </div>
 </div>
 

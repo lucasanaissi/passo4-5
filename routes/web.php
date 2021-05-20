@@ -15,4 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+Route::get('/crud-user', function() {
+    return view('crudUser');
+})->name('crudUser');
+
+Route::resource('/usersCController', \App\Http\Controllers\usersCController::class);
