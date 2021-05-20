@@ -49,13 +49,19 @@
         </div>
         <div class="row">
             <div class="col-4">
-                <button type="button" class="buttonSubmit btn text-center bg-success">Enviar</button>
+                <button type="button"
+                        class="buttonSubmit btn text-center bg-success"
+                        onclick="{{ \App\Http\Controllers\usersCController::store($request) }}">Enviar</button>
             </div>
             <div class="col-4">
-                <button type="button" class="buttonSubmit btn text-center bg-warning">Editar</button>
+                <button type="button"
+                        class="buttonSubmit btn text-center bg-warning"
+                        onclick="{{ \App\Http\Controllers\usersCController::create($name, $email) }}">Editar</button>
             </div>
             <div class="col-4">
-                <button type="button" class="buttonSubmit btn text-center bg-danger">Deletar</button>
+                <button type="button"
+                        class="buttonSubmit btn text-center bg-danger"
+                        onclick="{{ \App\Http\Controllers\usersCController::create($name, $email) }}">Deletar</button>
             </div>
         </div>
         <div class="tabela">
@@ -69,5 +75,15 @@
         </div>
     </div>
 </div>
+
+<script>
+    function save(){
+        let name = document.getElementsById('name');
+        let email = document.getElementsById('email');
+
+        return (name, email);
+    }
+</script>
+
 </body>
 </html>
