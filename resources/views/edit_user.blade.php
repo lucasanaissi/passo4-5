@@ -25,7 +25,9 @@
                 <a class="nav-link active" href="{{ route('home') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active"> CRUD - User</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active selected"> Lista de usuários</a>
             </li>
         </ul>
     </div>
@@ -46,44 +48,9 @@
                        id="email"
                        name="email">
             </div>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <button type="button"
-                        class="buttonSubmit btn text-center bg-success"
-                        onclick="{{ \App\Http\Controllers\usersCController::store($request) }}">Enviar</button>
-            </div>
-            <div class="col-4">
-                <button type="button"
-                        class="buttonSubmit btn text-center bg-warning"
-                        onclick="{{ \App\Http\Controllers\usersCController::create($name, $email) }}">Editar</button>
-            </div>
-            <div class="col-4">
-                <button type="button"
-                        class="buttonSubmit btn text-center bg-danger"
-                        onclick="{{ \App\Http\Controllers\usersCController::create($name, $email) }}">Deletar</button>
-            </div>
-        </div>
-        <div class="tabela">
-            <table class="table">
-                <tr class="tr">
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                </tr>
-            </table>
+            <a class="btn btn-primary bg-secondary" href="{{ route('home') }}"">Voltar</a>
         </div>
     </div>
 </div>
-
-<script>
-    function save(){
-        let name = document.getElementsById('name');
-        let email = document.getElementsById('email');
-
-        return (name, email);
-    }
-</script>
-
 </body>
 </html>

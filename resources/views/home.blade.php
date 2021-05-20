@@ -12,17 +12,20 @@
 
     <!-- Fonts -->
     <!-- Styles -->
-    <title>Home - CRUD</title>
+    <title>Home - Primeiro CRUD</title>
 </head>
 <body>
 <div class="card text-center">
     <div class="card-header bg-primary">
         <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-                <a class="nav-link active" href="">Home</a>
+                <a class="nav-link active selected">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="{{ route('crudUser') }}"> CRUD - User</a>
+                <a class="nav-link active" href="{{ route('user.create') }}"> Cadastrar novo usuário</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active selected" href="{{ route('user.index') }}"> Lista de usuários</a>
             </li>
         </ul>
     </div>
