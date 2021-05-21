@@ -25,10 +25,10 @@
                 <a class="nav-link active" href="{{ route('home') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active selected" href="{{ route('user.create') }}"> Cadastrar novo usuário</a>
+                <a class="nav-link active selected" href="{{ route('user.create') }}">Cadastrar novo usuário</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active selected"> Lista de usuários</a>
+                <a class="nav-link active selected">Lista de usuários</a>
             </li>
         </ul>
     </div>
@@ -39,17 +39,23 @@
             <th>E-mail</th>
         </tr>
         <tbody>
-            @foreach($users as $user)
-                <tr>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>
-                        <a type="button"
-                           class="btn btn-warning"
-                               onclick="{{ route('user.edit', ['userId' => $user->id]) }}">Editar usuário</a>
-                    </td>
-                </tr>
-            @endforeach
+        @foreach($users as $user)
+            <tr>
+                <td>{{ $user->id }}</td>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
+                <td>
+                    <a type="button"
+                       class="btn btn-warning"
+                       onclick="{{ route('user.edit', ['userId' => $user->id]) }}">Editar usuário</a>
+                </td>
+                <td>
+                    <a type="button"
+                       class="btn btn-danger"
+                       onclick="{{ route('user.destroy', ['userId' => $user->id]) }}">Excluir usuário</a>
+                </td>
+            </tr>
+        @endforeach
         </tbody>
     </table>
 </div>

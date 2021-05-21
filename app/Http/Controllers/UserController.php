@@ -30,7 +30,7 @@ class UserController extends Controller
        $data = $request->all();
        $user = User::create($data);
 
-       return redirect()->route('user.index');
+       return redirect()->route('user.index')->with('alert-sucess', 'Usuário criado com sucesso!');
     }
 
     /**
@@ -52,7 +52,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return redirect()->route('user.edit', compact('user'));
     }
 
     /**
@@ -75,6 +76,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect()->route('user.index')->with('alert-sucess', 'Usuario deletado');
     }
 }

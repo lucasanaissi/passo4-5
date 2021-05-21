@@ -15,7 +15,7 @@
     <link href="{{ asset('css/app.css') }}"
           rel="stylesheet">
 
-    <title>CRUD User</title>
+    <title>EDIÇÃO DE USUÁRIO</title>
 </head>
 <body>
 <div class="card text-center">

@@ -20,4 +20,7 @@ Route::get('/user/index', [UserController::class, 'index'])->name('user.index');
 // ACESSA O MÉTODO STORE DO USERCONTROLLER
 Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
 
+// ACESSA O MÉTODO DESTROY DO USER CONTROLLER
+Route::post('/user/destroy', [UserController::class, 'destroy'])->name('user.destroy');
+
 
